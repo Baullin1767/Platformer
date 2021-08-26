@@ -9,6 +9,8 @@ public class Menu : MonoBehaviour
     void Start()
     {
         menu.SetActive(false);
+
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -26,5 +28,5 @@ public class Menu : MonoBehaviour
         menu.SetActive(false);
     }
 
-    public void Yes() { SceneManager.LoadScene("Level"); }
+    public void Yes() { SceneManager.LoadScene("MineMenu"); }
 }
