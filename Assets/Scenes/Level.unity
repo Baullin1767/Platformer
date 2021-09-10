@@ -2365,10 +2365,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 467006, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9592362, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11422312, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 2020638817}
     - target: {fileID: 6902860427975387293, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
       propertyPath: character
       value: 
@@ -2393,7 +2401,8 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 11441626, guid: 78aa43b9bf2d0c543b58fe6c382fa32c, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7870443080968280912, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
 --- !u!4 &1003723554 stripped
 Transform:
@@ -4144,6 +4153,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73d79c3d84560054584f05fea6a03943, type: 3}
+--- !u!114 &2020638817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6608490337070382938, guid: 242897b9720bbc54c822c72c324e412b, type: 3}
+  m_PrefabInstance: {fileID: 1002224556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e17d2aa0b435bd4695781c734db73b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2060404114
 PrefabInstance:
   m_ObjectHideFlags: 0

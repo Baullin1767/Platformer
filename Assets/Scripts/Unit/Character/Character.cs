@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Character : Unit
 {
@@ -36,6 +37,9 @@ public class Character : Unit
     private Animator animator;
     private SpriteRenderer sprite;
 
+    [SerializeField]
+    private HitScript hit;
+
     private void Awake()
     {
         livesBar = FindObjectOfType<LivesBar>();
@@ -55,6 +59,29 @@ public class Character : Unit
 
         if (Input.GetButton("Horizontal")) { Run(); }
         if (isGrounded && Input.GetButtonDown("Jump")) { Jump(); }
+        if (isGrounded && Input.GetButtonDown("Fire1")) { Hit(); }
+    }
+
+    private void Hit()
+    {
+        Vector3 direction = transform.right * Input.GetAxis("Horizontal");
+
+        bool turnSide = true;
+        if (isGrounded && direction.x > 0.0F) { turnSide = false; }
+        else if(isGrounded && direction.x < 0.0F) { turnSide = true; }
+
+        if (turnSide) { State = CharState.Hit; }
+        else { State = CharState.BackHit; }
+        
+        
+
+        hit.gameObject.layer = LayerMask.NameToLayer("Monster");
+        Invoke(nameof(TurnOnCollisions), 0.15f);
+    }
+
+    private void TurnOnCollisions()
+    {
+        hit.gameObject.layer = LayerMask.NameToLayer("Hit");
     }
 
     private void Run()
@@ -101,6 +128,8 @@ public class Character : Unit
     {
         Idle,
         Run,
-        Jump
+        Jump,
+        Hit,
+        BackHit
     }
 }
